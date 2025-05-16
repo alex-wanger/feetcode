@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import cgi
 
-user_data = "/home/students/odd/2027/awang70/public_html/feetcode/users_data.txt"
+user_data = "/home/students/odd/2027/awang70/public_html/feetcode/.users_data.txt"
 
 def print_html_header():
     print("Content-Type: text/html\n")

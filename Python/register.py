@@ -2,7 +2,7 @@
 
 import cgi
 
-users_data = "/home/students/odd/2027/awang70/public_html/feetcode/users_data.txt"
+users_data = "/home/students/odd/2027/awang70/public_html/feetcode/.users_data.txt"
 
 def redirect_to_login():
     print("Status: 302 Found")
