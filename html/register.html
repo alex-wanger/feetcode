@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <body>
+<head>
+    <link rel="stylesheet" href="../css/register.css">
+<body>
+  <div class="container">
     <h2>Register</h2>
-    <form action="../Python/register.py" method="post">   
-      Username: <input type="text" name="username" required><br>
-      Password: <input type="password" name="password" required><br>
-      <input type="submit" value="Register">
+    <form action="/~awang70/feetcode/cgi-bin/register.py" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+
+        <input type="submit" value="Register">
     </form>
-  </body>
+</div>
+</body>
+</head>
 </html>
