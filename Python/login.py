@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import cgi
-
+import http.cookies
 user_data = "/home/students/odd/2027/awang70/public_html/feetcode/.users_data.txt"
 
 def print_html_header():
@@ -22,10 +22,6 @@ def print_html_footer():
     </html>
     """)
 
-def send_to_homepage():
-    print("Content-Type: text/html")
-    print("Status: 302 Found")
-    print("Location: /~awang70/feetcode/html/landing_page.html")
     print()
 
 def login():
@@ -50,7 +46,9 @@ def login():
                 key_values[key] = value
 
     if username in key_values and key_values[username] == password:
-        send_to_homepage()
+        print(f"Set-Cookie: username={username}; Path=/")
+        print("Status: 302 Found")
+        print("Location: /~awang70/feetcode/Python/landing_page.py\n")
     else:
         print_html_header()
         print("<p>Login failed: Invalid username or password.</p>")

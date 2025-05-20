@@ -31,7 +31,7 @@ def main():
     form = cgi.FieldStorage()
     username = form.getvalue("username")
     password = form.getvalue("password")
-
+    email = form.getvalue("email")
     key_values = {}
     with open(users_data, "r") as file:
         for line in file:
