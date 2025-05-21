@@ -1,5 +1,1 @@
-alex:wang
-hi:hi
-a:a
-LEBRON:james
-make:123
+LEBRON:james:alexwang94834@gmail.com

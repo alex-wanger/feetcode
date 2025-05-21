@@ -32,22 +32,22 @@ def main():
     username = form.getvalue("username")
     password = form.getvalue("password")
     email = form.getvalue("email")
-    key_values = {}
+    data = {}
     with open(users_data, "r") as file:
         for line in file:
              line = line.rstrip("\n")
-             key, value = line.split(":")
-             key_values[key] = value
+             username, password, email = line.split(":")
+             data[username]  = value, email 
 
-    if username in key_values:
+    if username in data:
         print_html_header()
         print("<p>Username taken, try with a new username.</p>")
         print_html_footer()
     
-    elif username and password and username not in key_values:
+    elif username and password and username not in data:
         try:
             with open(users_data, "a") as f:
-                f.write(f"{username}:{password}\n")
+                f.write(f"{username}:{password}:{email}\n")
             redirect_to_login()
         except Exception as e:
             print_html_header()

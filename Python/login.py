@@ -28,10 +28,10 @@ def login():
     form = cgi.FieldStorage()
     username = form.getvalue("username")
     password = form.getvalue("password")
-
-    if not username or not password:
+    email = form.getvalue("email")
+    if not username or not password or not email:
         print_html_header()
-        print("<p>Error: Please provide username and password.</p>")
+        print("<p>Error: Please provide username, email and password.</p>")
         print_html_footer()
         return
 
@@ -39,13 +39,11 @@ def login():
     with open(user_data, "r") as file:
         for line in file:
             line = line.strip()
-            if ":" in line:
-                key, value = line.split(":", 1)
-                key = key.strip()
-                value = value.strip()
-                key_values[key] = value
+            key, value, email = line.split(":")
+            key_values[key] = value, email 
 
-    if username in key_values and key_values[username] == password:
+    if (username in key_values and key_values[username] == password) or (email in key_values and key_values[email] == password):
+#TODO, FIX THIS THERE ARE LOGIC ERRORS 
         print(f"Set-Cookie: username={username}; Path=/")
         print("Status: 302 Found")
         print("Location: /~awang70/feetcode/Python/landing_page.py\n")
