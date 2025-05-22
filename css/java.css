@@ -1,117 +1,133 @@
-* {
+  footer {
+    background-color: #fdfdfd;
+    padding: 40px 20px;
+    border-top: 1px solid #ddd;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 40px 0 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-container {
     display: flex;
+    justify-content: center;
+    align-items: stretch;
     flex-wrap: wrap;
-}
-
-.left-box {
-    flex: 1;
-    min-width: 300px;
-    padding: 25px;
-    background-color: #3a3a3a;
-    border-radius: 12px;
-    margin: 10px;
-    transition: all 0.3s ease;
-}
-
-.left-box:hover {
-    background-color: #444;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.right-boxes {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.right-box {
-    flex: 1;
-    min-width: 150px;
-    padding: 20px;
-    background-color: #3a3a3a;
-    border-radius: 12px;
-    margin: 10px;
-    transition: all 0.3s ease;
-}
-
-.right-box:hover {
-    background-color: #444;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-h3 {
-    margin-bottom: 15px;
-    color: #f0f0f0;
-}
-
-p {
-    margin-bottom: 10px;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-
-.right-box:hover p,
-.left-box:hover p {
-    color: #fff;
-}
-
-.footer-bottom {
-    width: 100%;
-    padding: 20px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .styled-box {
+    background-color: white;
+    padding: 18px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .left-box {
+    flex: 1 1 300px;
+  }
+  
+  .left-box h3 {
     text-align: center;
-    border-top: 1px solid #444;
-    margin-top: 20px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .left-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .stuy-logo {
+    width: 65px;
+    height: auto;
+    flex-shrink: 0;
+    align-self: center;
+  }
+  
+  .left-inner p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .right-boxes {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  
+  .right-box {
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.home-btn {
-    background-color: #555;
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .right-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  .right-box span {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .right-box a {
+    color: #333;
     text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.home-btn:hover {
-    background-color: #666;
-    transform: scale(1.05);
-}
-
-.copyright {
-    color: #aaa;
+    font-size: 16px;
+  }
+  
+  .right-box a:hover {
+    color: #007bff;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .home-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    gap: 8px;
+    transition: background 0.3s;
+  }
+  
+  .home-btn i {
+    font-size: 18px;
+  }
+  
+  .home-btn:hover {
+    background-color: #555;
+  }
+  
+  .footer-bottom .copyright {
     font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    .left-box, .right-box {
-        flex: 100%;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
+    color: #666;
+  }
+  
