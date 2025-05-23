@@ -42,14 +42,14 @@ def login():
             key, value, email = line.split(":")
             key_values[key] = value, email 
 
-    if (username in key_values and key_values[username] == password) or (email in key_values and key_values[email] == password):
+    if (username in key_values and key_values[username] == password, email):
 #TODO, FIX THIS THERE ARE LOGIC ERRORS 
         print(f"Set-Cookie: username={username}; Path=/")
         print("Status: 302 Found")
         print("Location: /~awang70/feetcode/Python/landing_page.py\n")
     else:
         print_html_header()
-        print("<p>Login failed: Invalid username or password.</p>")
+        print(f"<p>Login failed: Invalid username or password.</p>")
         print_html_footer()
 
 def main():

@@ -1,174 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centered Navbar</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background-color: #f8f9fa;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 30px;
-      background-color: white;
-      border: 1px solid #e2e2e2;
-      border-radius: 50px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      width: fit-content;
-      max-width: 90%;
-      gap: 40px;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
-      color: #1e1e1e;
-      margin-right: 20px;
-    }
-
-    .nav-section {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-links, .auth-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #444;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-
-    a:hover {
-      background-color: #f0f0f0;
-      color: #000;
-    }
-
-    .active-link {
-      font-weight: bold;
-      color: #000;
-      background-color: #e0e0e0;
-    }
-
-    .highlighted {
-      background-color: #f0f0f0;
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-weight: 500;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 8px 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      z-index: 100;
-      min-width: 140px;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-      color: #333;
-      white-space: nowrap;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: #f7f7f7;
-    }
-
-    .dropdown-menu a.active-link {
-      background-color: #e0e0e0;
-      font-weight: bold;
-    }
-  </style>
+  <title>Python</title>
+  <script src="script.js" > </script>
+  <link rel="stylesheet" href="../css/basic.css" />
 </head>
+
 <body>
+  <div id="header-container"></div>
 
-<header class="header">
-  <nav>
-    <div class="nav-section">
-      <div class="logo">YourSite</div>
+  <main id="main-content">
 
-      <div class="nav-links">
-        <a href="index.html" class="active-link">Home</a>
+    <section id="history">
+     
+    </section>
+    
+    <section id="basics">
+     
+    </section>
 
-        <div class="dropdown">
-          <a href="#">Java</a>
-          <div class="dropdown-menu">
-            <a href="java-history.html">History</a>
-            <a href="java-basics.html">Basics</a>
-            <a href="java-oop.html">OOP</a>
-            <a href="java-quiz.html">Quiz</a>
-          </div>
-        </div>
+    <section id="libraries">
 
-        <div class="dropdown">
-          <a href="#">Racket</a>
-          <div class="dropdown-menu">
-            <a href="racket-history.html">History</a>
-            <a href="racket-basics.html">Basics</a>
-            <a href="racket-quiz.html">Quiz</a>
-          </div>
-        </div>
+    </section>
 
-        <div class="dropdown">
-          <a href="#">Python</a>
-          <div class="dropdown-menu">
-            <a href="python-history.html">History</a>
-            <a href="python-basics.html">Basics</a>
-            <a href="python-libraries.html">Libraries</a>
-            <a href="python-quiz.html">Quiz</a>
-          </div>
-        </div>
+  </main>
 
-        <a href="ultimate-quiz.html" class="highlighted">Ultimate Quiz</a>
-      </div>
-    </div>
-
-    <div class="auth-links">
-      <a href="register.html">Register</a>
-      <a href="login.html">Login</a>
-    </div>
-  </nav>
-</header>
-
+  <div id="footer-container"></div>
 </body>
+
 </html>

@@ -8,41 +8,37 @@ print("Content-Type: text/html\n")
 cookie = http.cookies.SimpleCookie(os.environ.get("HTTP_COOKIE"))
 username = cookie.get("username")
 
-
-def navbar():
-    print("""<div class="navbar">
-        <a href="/~awang70/feetcode/html/java.html">Java</a>
-        <a href="/~awang70/feetcode/html/python.html">Python</a>
-        <a href="/~awang70/feetcode/html/javascript.html">JavaScript</a>
-        <a href="/~awang70/feetcode/html/github.html">Git</a>
+def html():
+    print(f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        </head>
+            <body>
+                <div class="navbar">
+                        <span style="text-align:left;"><a href="/~awang70/public_html/feetcode/html/landing_page.html">Home</a></span>
+                        <a href="/~awang70/feetcode/html/java.html">Java</a>
+                        <a href="/~awang70/feetcode/html/python.html">Python</a>
+                        <a href="/~awang70/feetcode/html/racket.html">Racket</a>
+                        <a href="/~awang70/feetcode/html/quiz.html">Quiz</a>
+                </div>
+    <div class="container">
+        <h1>Welcome, <strong>{username.value}!</strong></h1>
+        <p>This is your landing page!</p>
     </div>
-        """)
-def header():
-    print("<!DOCTYPE html>")
-    print("<html lang='en'>")
-    print("<head>")
-    print("<link rel='stylesheet' href='/~awang70/feetcode/css/styles.css'>")
-    print("<title>Landing Page</title>")
-    print("</head>")
-    print("<body>")
-    navbar() 
-    print("<h1>Welcome to Feetcode!</h1>")
+</body>
+</html>
+""")
 
 
-def welcome():
-    if username:
-        print(f"<p>Hello, <strong>{username.value}</strong></p>")
-    else: 
-        print("<p> Error </p>")
-
-def footer():
-    print("</body></html>")
+ 
 
 
 def main():
-    header()
-    welcome()
-    footer()
+    html()    
 
 if __name__ == "__main__":
     try:

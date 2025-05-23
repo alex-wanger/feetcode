@@ -1,0 +1,192 @@
+<style>
+    .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  background-color: #f9fafb;
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  width: fit-content;
+  max-width: 90%;
+  gap: 40px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.header .logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #1e1e1e;
+  margin-right: 20px;
+}
+
+.header .nav-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header .nav-links,
+.header .auth-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header a {
+  text-decoration: none;
+  color: #444;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.header a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.header .active-link {
+  font-weight: bold;
+  color: #000;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.header .dropdown {
+  position: relative;
+}
+
+.header .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.header .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+  min-width: 140px;
+}
+
+.header .dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.header .dropdown-menu a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.header .dropdown-menu a.active-link {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 24px;
+    padding: 20px;
+  }
+
+  .header .nav-section,
+  .header .auth-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+
+  .header .dropdown-menu a {
+    padding-left: 20px;
+  }
+
+  .header .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+</style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <header class="header">
+    
+    <nav>
+      <div class="nav-section">
+        <div class="logo">FeetCode</div>
+        <div class="nav-links">
+          <a href="home.html"><i class="fas fa-home"></i> Home</a>
+          <div class="dropdown">
+            <a href="java.html">Java</a>
+            <div class="dropdown-menu">
+              <a href="java.html#history">History</a>
+              <a href="java.html#basics">Basics</a>
+              <a href="java.html#OOP">OOP</a>
+              <a href="jquiz.html">Quiz</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="racket.html">Racket</a>
+            <div class="dropdown-menu">
+              <a href="racket.html#history">History</a>
+              <a href="racket.html#basics">Basics</a>
+              <a href="rquiz.html">Quiz</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="python.html">Python</a>
+            <div class="dropdown-menu">
+              <a href="python.html#history">History</a>
+              <a href="python.html#basics">Basics</a>
+              <a href="python.html#libraries">Libraries</a>
+              <a href="pquiz.html">Quiz</a>
+            </div>
+          </div>
+          <a href="uquiz.html">Ultimate Quiz</a>
+        </div>
+      </div>
+      <div class="auth-links">
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+  </header>
+  

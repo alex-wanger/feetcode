@@ -1,0 +1,202 @@
+<style>
+.footer {
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer .footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer .styled-box {
+  background-color: white;
+  padding: 18px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer .left-box {
+  flex: 1 1 300px;
+}
+
+.footer .left-box h3 {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+.footer .left-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer .stuy-logo {
+  width: 65px;
+  height: auto;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.footer .left-inner p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.footer .right-boxes {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.footer .right-box {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer .right-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.footer .right-box span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.footer .right-box a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer .right-box a:hover {
+  color: #007bff;
+}
+
+.footer .footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer .home-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+.footer .home-btn i {
+  font-size: 18px;
+}
+
+.footer .home-btn:hover {
+  background-color: #555;
+}
+
+.footer .footer-bottom .copyright {
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .footer .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer .right-boxes {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer .home-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<footer class="footer">
+    <div class="footer-container">
+      
+        <div class="left-box styled-box">
+            <h3>Stuyvesant Computer Science Department</h3>
+            <div class="left-inner">
+              <img class="stuy-logo" src="https://upload.wikimedia.org/wikipedia/en/4/49/Stuyvesant_High_School_logo.svg" alt="Stuy Logo" />
+              <p>
+                345 Chambers Street<br />
+                New York, NY 10282<br />
+                Phone: (212) 312-4800<br />
+                Fax: (212) 587-3874
+              </p>
+            </div>
+          </div>
+          
+          
+
+      <!-- Right Boxes -->
+      <div class="right-boxes">
+        <div class="right-box styled-box">
+          <span>Alex Wang</span>
+          <a href="mailto:awang70@stuy.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="right-box styled-box">
+          <span>Mekot Sarder</span>
+          <a href="mailto:msarder70@stuy.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="right-box styled-box">
+          <span>Ryan Yu</span>
+          <a href="mailto:ryu70@stuy.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="right-box styled-box">
+          <span>Brendon Xie</span>
+          <a href="mailto:bxie70@stuy.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <a href="http://homer.stuy.edu/~msarder70/feetcode/html/home.html" class="home-btn">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <div class="copyright">
+        © Alex Wang, Mekot Sarder, Ryan Yu, Brendon Xie June 6, 2025
+      </div>
+    </div>
+  </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
