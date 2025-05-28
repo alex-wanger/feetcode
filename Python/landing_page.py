@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+
 import http.cookies
 
 print("Content-Type: text/html\n")
@@ -12,24 +13,39 @@ def html():
     print(f"""
     <!DOCTYPE html>
     <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Welcome</title>
-        <link rel="stylesheet" href="../css/styles.css">
-        </head>
-            <body>
-                <div class="navbar">
-                        <span style="text-align:left;"><a href="/~awang70/public_html/feetcode/html/landing_page.html">Home</a></span>
-                        <a href="/~awang70/feetcode/html/java.html">Java</a>
-                        <a href="/~awang70/feetcode/html/python.html">Python</a>
-                        <a href="/~awang70/feetcode/html/racket.html">Racket</a>
-                        <a href="/~awang70/feetcode/html/quiz.html">Quiz</a>
-                </div>
-    <div class="container">
-        <h1>Welcome, <strong>{username.value}!</strong></h1>
-        <p>This is your landing page!</p>
-    </div>
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python</title>
+  <script src="../html/script.js" > </script>
+  <link rel="stylesheet" href="../css/basic.css" />
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <main id="main-content">
+    
+    <p>Welcome to Feetcode {username.value}!</p>
+
+    <section id="history">
+     
+    </section>
+    
+    <section id="basics">
+     
+    </section>
+
+    <section id="libraries">
+
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
 </body>
+
 </html>
 """)
 

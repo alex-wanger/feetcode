@@ -36,8 +36,8 @@ def main():
     with open(users_data, "r") as file:
         for line in file:
              line = line.rstrip("\n")
-             username, password, email = line.split(":")
-             data[username]  = value, email 
+             user, password, email = line.split(":")
+             data[user]  = value, email 
 
     if username in data:
         print_html_header()
