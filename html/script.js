@@ -3,7 +3,7 @@ fetch('../html/header.html')
   .then(data => {
     document.getElementById('header-container').innerHTML = data;
 
-    const links = document.querySelectorAll('.nav-links a');
+    const links = document.querySelectorAll('.nav-links a, .auth-links a');
     const currentUrl = window.location.href;
 
     links.forEach(link => {
