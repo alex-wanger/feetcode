@@ -37,7 +37,7 @@ def main():
         for line in file:
              line = line.rstrip("\n")
              user, password, email = line.split(":")
-             data[user]  = value, email 
+             data[user]  = password, email 
 
     if username in data:
         print_html_header()
