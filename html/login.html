@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/register.css">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Feetcode</title>
+        <script src="script.js" > </script>
+        <link rel="stylesheet" href="../css/basic.css" />
+    </head>
+
   <body>
-      <div class="container">
+      <div id="header-container"></div>
+
+      <main id="main-content">
     <h2>Login</h2>
     <form action="../Python/login.py" method="post">   
       Username: <input type="text" name="username" required><br>
@@ -11,7 +19,11 @@
       Email: <input type="email" name="email" required><br>
       <input type="submit" value="Login">
     </form>
-      </div>
+
+      </main>
+
+      <div id="footer-container"></div>
   </body>
-    </head>
+
 </html>
+

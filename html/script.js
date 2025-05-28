@@ -1,9 +1,9 @@
-fetch('header.html')
+fetch('../html/header.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('header-container').innerHTML = data;
 
-    const links = document.querySelectorAll('.nav-links a');
+    const links = document.querySelectorAll('.nav-links a, .auth-links a');
     const currentUrl = window.location.href;
 
     links.forEach(link => {
@@ -13,7 +13,7 @@ fetch('header.html')
     });
   });
 
-fetch('footer.html')
+fetch('../html/footer.html')
   .then(res => res.text())
   .then(data => {
     document.getElementById('footer-container').innerHTML = data;
