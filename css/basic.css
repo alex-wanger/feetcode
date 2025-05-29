@@ -10,6 +10,7 @@ html, body {
     
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     }
     
@@ -17,8 +18,4 @@ body {
     flex: 1;
     }
     
-p {
-    text-align: center;
-    font-size: 3vw;
-}    
 
