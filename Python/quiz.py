@@ -20,8 +20,7 @@ def print_html_footer():
     </body>
     </html>
     """)
-
-    print()
+ 
 
 def quiz():
     form = cgi.FieldStorage()
@@ -30,9 +29,9 @@ def quiz():
     response3 = form.getvalue("r3")
     data = [response1, response2, response3]
 
-    answer1 = True
-    answer2 = True
-    answer3 = True
+    answer1 = "True"
+    answer2 = "True"
+    answer3 = "True"
     answer_key = [answer1, answer2, answer3]
 
     counter = 0
@@ -40,18 +39,25 @@ def quiz():
         if data[i] == answer_key[i]:
             counter += 1 
     
-    values = [(counter/3) * 100, (counter/3) * 100)]
-    labels = 'True', 'False'
-
-    plt.pie(values)
-    #still WIP, need to delay the thread to allow the python script to run 
-
+    values = [(counter/3) * 100]
+    print(data)
+    print(counter)
+    labels = ["True"]
+    plt.pie(values, labels=labels)
+    plt.savefig("mygraph.png")
+    print('''<img src="mygraph.png" graph="alt" height="600"> ''')
+    #still not working properly 
+def printhtml():
+    print_html_header()
+ 
+    quiz()
+    print_html_footer()
 def main():
-    login()
-
-if __name__ == "__main__":
     try:
-        main()
+        printhtml()
     except:
         cgi.print_exception()
+
+if __name__ == "__main__":
+    main()
 
