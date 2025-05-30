@@ -39,17 +39,25 @@ def quiz():
         if data[i] == answer_key[i]:
             counter += 1 
     
-    values = [(counter/3) * 100]
-    print(data)
-    print(counter)
-    labels = ["True"]
-    plt.pie(values, labels=labels)
+    labels = []
+    values = [(counter/3) * 100, (3 - counter)/3 * 100]
+    #make it so that there arent two labels if you get 100 on either true or false
+    if values[0] == 100:
+        labels.append("True")
+        values.pop(1)
+    elif values[1] == 100:
+        labels.append("False")
+        values.pop(0)
+    else: 
+        labels.append("True"), labels.append("False")
+
+
+    plt.pie(values, labels=labels, autopct='%.1f%%')
     plt.savefig("mygraph.png")
     print('''<img src="mygraph.png" graph="alt" height="600"> ''')
-    #still not working properly 
+
 def printhtml():
     print_html_header()
- 
     quiz()
     print_html_footer()
 def main():
