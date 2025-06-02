@@ -5,20 +5,28 @@ from matplotlib import pyplot as plt
 def print_html_header():
     print("Content-Type: text/html\n")
     print("""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Feetcode</title>
-    </head>
-    <body>
-        <h1>Feetcode</h1>
+  <!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Quiz</title>
+  <script src="../html/script.js" > </script>
+  <link rel="stylesheet" href="../css/basic.css" />
+</head>
+<body>
+  <div id="header-container"></div>
+  <div>
     """)
 
 def print_html_footer():
     print("""
-    </body>
-    </html>
+    </div>
+    <div id="footer-container"></div>
+</body>
+
+</html>
     """)
  
 
