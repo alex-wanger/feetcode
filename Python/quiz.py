@@ -1,7 +1,9 @@
 #!usr/bin/env python3
 import cgi
 import csv 
+import pandas as pd
 from matplotlib import pyplot as plt
+
 def print_html_header():
     print("Content-Type: text/html\n")
     print("""
@@ -30,22 +32,38 @@ def print_html_footer():
     """)
 
     print()
+def get_answer_key(topic):
+    file_path = 'output.csv'
+    
+    with open(file_path, 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        header = next(reader)
+
+        for row in csv_reader:
+            if row[0].strip().lower() == topic.strip().lower():
+                return row[1:]
+    print(f"data for {topic} not in CSV")
 
 def quiz():
     form = cgi.FieldStorage()
+    
     response_data = []
-    for i in range(5):
-        response_data = form.getvalue("r" + str(i))
     
-    
-    answer_key = [answer1, answer2, answer3]
-
     counter = 0
-    for i in range(len(data)):
-        if data[i] == answer_key[i]:
-            counter += 1 
+
+    topic = form.getvalue("quizTopic")
     
-    values = [(counter/3) * 100, (counter/3) * 100]
+    answer_key = get_answer_key(topic)
+    
+    if len(answer_key) != len(response_data):
+        print("Error, please submit all values!")
+        return 0
+
+    for i in range(len(answer_key)):
+       if answer_key[i] == form.getvalue("r" + str(i)):
+           counter += 1
+    #change
+    values = [(counter/5) * 100, (counter/5) * 100]
     labels = 'True', 'False'
     print(f"{counter}")
     #plt.pie(values)
