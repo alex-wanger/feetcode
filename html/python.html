@@ -12,74 +12,150 @@
 <body>
   <div id="header-container"></div>
 
-  <main id="main-content">
+	<main id="main-content">
 
-    <section id="history">
-     <h1>History of Python</h1>
-     <p>Python, developed in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands, is a high-level, general-purpose programming language. Its design emphasizes code readability with the use of significant indentation. Python is dynamically type-checked and garbage-collected. It supports multiple programming paradigms and contains a comprehensive standard library. </p>
-    </section>
-    
-    <section id="basics">
-    <h1>Basics of Python</h1>
-    <p>print(“Hello world”)<p>
-    <div id="pclasses">
-    <table>
-	<tbody>
-        <tr>
-			<td>Type</td>
-			<td>Class</td>
-		</tr>
-		<tr>
-			<td>Text</td>
-			<td>str</td>
-		</tr>
-		<tr>
-			<td>Numeric</td>
-			<td>int, float, complex</td>
-		</tr>
-		<tr>
-			<td>Sequence</td>
-			<td>list, tuple, range</td>
-		</tr>
-		<tr>
-			<td>Mapping</td>
-			<td>dict</td>
-		</tr>
-		<tr>
-			<td>Set</td>
-			<td>set, frozenset</td>
-		</tr>
-		<tr>
-			<td>Boolean</td>
-			<td>bool</td>
-		</tr>
-		<tr>
-			<td>Binary</td>
-			<td>bytes, bytearray, memoryview</td>
-		</tr>
-		<tr>
-			<td>None</td>
-			<td>NoneType</td>
-		</tr>
-	</tbody>
-</table>
+	<section id="history">
+		<h1>History of Python</h1>
+		<p>Python was created in the late 1980s by <strong>Guido van Rossum</strong> at <em>Centrum Wiskunde & Informatica (CWI)</em> in the Netherlands. It was officially released in 1991. The name "Python" was inspired not by the snake, but by the British comedy series <em>Monty Python's Flying Circus</em>.</p>
+		<p>Python was designed to be simple and readable, with a clean syntax that emphasizes ease of use. Its use of indentation to define code blocks is one of its most recognizable features. Over time, Python has become a powerful language used in fields such as web development, machine learning, automation, and education.</p>
+		<p>Its rich ecosystem of libraries and its welcoming community have helped make it one of the most popular programming languages in the world today.</p>
+	</section>
 
-</div>
+	<section id="basics">
+		<h1>Basics of Python</h1>
 
-    <h2>Loops</h2>
-    <p>Python offers two primary loop structures: for loops and while loops, each serving distinct purposes in controlling the flow of execution. </p>
-    <h3>For Loops</h3>
-    <p>Designed for iterating over a sequence (like lists, tuples, strings, or ranges) or other iterable objects. The number of iterations is typically known in advance, as it's determined by the length of the sequence being traversed. Useful when you need to perform an action for each element in a collection. </p>
-    <h3> While Loops</h3>
-<p>Repeat a block of code as long as a given condition remains true. The number of iterations isn't predetermined, as it depends on the condition becoming false. Suitable when the loop needs to continue until a specific situation is met.</p>
-    </section>
+		<h2>Print Statements</h2>
+		<div class="subsection">
+		<p>The <strong>print()</strong> function is used to display text or results on the screen.</p>
+		<p>Example: <em>print("Hello, world!")</em></p>
+		<p><strong>Output:</strong> Hello, world!</p>
+		</div>
 
-    <section id="libraries">
-    <h1>Common Libraries</h1>
-    <p>Matplotlib <br>
-Turtles </p>
+		<h2>Variables and Data Types</h2>
+		<div class="subsection">
+		<p>Variables store data values. Python automatically assigns a data type based on the value given.</p>
 
-    </section>
+		<div class="table-container">
+			<table>
+			<thead>
+				<tr>
+				<th>Category</th>
+				<th>Type</th>
+				<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<td>Text</td>
+				<td>str</td>
+				<td>Textual data, enclosed in quotes (e.g., "hello")</td>
+				</tr>
+				<tr>
+				<td>Numeric</td>
+				<td>int, float, complex</td>
+				<td>Whole numbers (int), decimals (float), or complex numbers (3+2j)</td>
+				</tr>
+				<tr>
+				<td>Sequence</td>
+				<td>list, tuple, range</td>
+				<td>Collections of items. Lists are editable, tuples are not, ranges are number sequences</td>
+				</tr>
+				<tr>
+				<td>Mapping</td>
+				<td>dict</td>
+				<td>Key-value pairs (e.g., {"name": "Alice"})</td>
+				</tr>
+				<tr>
+				<td>Set</td>
+				<td>set, frozenset</td>
+				<td>Unordered collections of unique elements</td>
+				</tr>
+				<tr>
+				<td>Boolean</td>
+				<td>bool</td>
+				<td>True or False</td>
+				</tr>
+				<tr>
+				<td>Binary</td>
+				<td>bytes, bytearray, memoryview</td>
+				<td>Used to store binary data</td>
+				</tr>
+				<tr>
+				<td>None</td>
+				<td>NoneType</td>
+				<td>Represents a null or no value</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		</div>
+
+		<h2>Operators and Math Terms</h2>
+		<div class="subsection">
+		<p>Python includes arithmetic and comparison operators:</p>
+		<ul>
+			<li><strong>Arithmetic:</strong> + (add), - (subtract), * (multiply), / (divide), ** (power), // (floor division), % (modulus)</li>
+			<li><strong>Comparison:</strong> == (equal), != (not equal), >, <, >=, <=</li>
+			<li><strong>Logical:</strong> and, or, not</li>
+		</ul>
+		<p>Example: <em>5 + 3 * 2</em></p>
+		<p><strong>Output:</strong> 11</p>
+		</div>
+
+		<h2>Functions</h2>
+		<div class="subsection">
+		<p>Functions are blocks of reusable code defined using the <strong>def</strong> keyword. Use <strong>return</strong> to send back a value.</p>
+		<p>Example:</p>
+		<p><em>def greet(name): return "Hi " + name</em></p>
+		<p><em>greet("Ali")</em></p>
+		<p><strong>Output:</strong> Hi Ali</p>
+		</div>
+
+		<h2>Loops</h2>
+		<div class="subsection">
+		<h3>For Loops</h3>
+		<p>Used for iterating over sequences like lists, ranges, or strings.</p>
+		<p>Example: <em>for i in range(3): print(i)</em></p>
+		<p><strong>Output:</strong><br>0<br>1<br>2</p>
+
+		<h3>While Loops</h3>
+		<p>Executes code repeatedly as long as a condition is true.</p>
+		<p>Example:</p>
+		<p><em>i = 0<br>while i < 3:<br>&nbsp;&nbsp;&nbsp;print(i)<br>&nbsp;&nbsp;&nbsp;i += 1</em></p>
+		<p><strong>Output:</strong><br>0<br>1<br>2</p>
+		</div>
+
+		<h2>Lists</h2>
+		<div class="subsection">
+		<p>Lists are ordered, changeable collections that can contain different types, including other lists.</p>
+		<ul>
+			<li>Can include duplicates</li>
+			<li>Mutable (can be updated)</li>
+			<li>Indexed from 0</li>
+		</ul>
+		<p>Example: <em>my_list = [1, 2, "hello"]</em><br><em>print(my_list[2])</em></p>
+		<p><strong>Output:</strong> hello</p>
+		</div>
+
+		<h2>Dictionaries</h2>
+		<div class="subsection">
+		<p>Dictionaries store data in key-value pairs. They are unordered, changeable, and do not allow duplicate keys.</p>
+		<p>Example: <em>student = {"name": "Lina", "age": 16}</em><br><em>print(student["name"])</em></p>
+		<p><strong>Output:</strong> Lina</p>
+		</div>
+	</section>
+
+	<section id="libraries">
+		<h1>Common Libraries</h1>
+
+		<h2>Matplotlib</h2>
+		<p><strong>Matplotlib</strong> is used to create graphs and plots in Python. It is especially useful for data visualization in science, engineering, and data analysis. You can make line graphs, bar charts, scatter plots, and more.</p>
+
+		<h2>Turtle</h2>
+		<p>The <strong>turtle</strong> module allows users to draw shapes and patterns by controlling a virtual "turtle" on screen. It's great for learning programming and visual creativity.</p>
+		<p>Examples for both will be shown with images.</p>
+
+  </section>
 
     <div id="quiz">
       <a href="../html/pquiz.html" class="quiz-btn">

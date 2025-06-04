@@ -67,9 +67,6 @@ body {
   margin: 2rem 0;
 }
 
-.pclasses{
-text-align: left;}
-
 
 .quiz-btn {
   display: inline-flex;
@@ -88,4 +85,42 @@ text-align: left;}
   background-color: #555;
    transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.table-container {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #e6ecff;
+  font-weight: bold;
+  color: #222;
+}
+
+.subsection {
+  margin-left: 2rem;
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid #d0d7ff;
+  background-color: #f8faff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
