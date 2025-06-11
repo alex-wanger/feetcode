@@ -1,30 +1,51 @@
 #!/usr/bin/python3
 
 import cgi
+import http.cookies
+import os
 
-users_data = "/home/students/odd/2027/awang70/public_html/feetcode/.users_data.txt"
-
-def redirect_to_login():
-    print("Status: 302 Found")
-    print("Location: /~awang70/feetcode/html/login.html")
-    print()  
+users_data = "../Python/.users_data.txt"
 
 def print_html_header():
     print("Content-type: text/html\n")
-    print("""
-    <!DOCTYPE html>
-    <html lang="en-US">
-        <head>
-            <meta charset="utf-8">
-            <title>Feetcode</title>
-        </head>
-        <body>
-    """)
+    print("""<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Feetcode</title>
+    <script src="../html/script.js"></script>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+<div id="header-container"></div>
+<main id="main-content">
+""")
 
 def print_html_footer():
     print("""
-        </body>
-    </html>
+</main>
+<div id="footer-container"></div>
+</body>
+</html>
+""")
+
+def print_register_form():
+    print("""
+    <div class="form-container">
+      <h2>Register</h2>
+      <form action="../Python/register.py" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+
+        <input type="submit" value="Register" class="submit-button">
+      </form>
+    </div>
     """)
 
 def main():
@@ -32,31 +53,55 @@ def main():
     username = form.getvalue("username")
     password = form.getvalue("password")
     email = form.getvalue("email")
+
+    print_html_header()
+
+    if not username or not password or not email:
+        print('<div class="status-message error">Missing fields. Please go back and try again.</div>')
+        print_register_form()
+        print_html_footer()
+        return
+
     data = {}
-    with open(users_data, "r") as file:
-        for line in file:
-             line = line.rstrip("\n")
-             user, password, email = line.split(":")
-             data[user]  = password, email 
+    try:
+        with open(users_data, "r") as file:
+            for line in file:
+                user, pw, em = line.strip().split(":")
+                data[user] = (pw, em)
+    except FileNotFoundError:
+        pass  # No users yet
 
     if username in data:
-        print_html_header()
-        print("<p>Username taken, try with a new username.</p>")
+        print('<div class="status-message error">Username taken. Try with a new one.</div>')
+        print_register_form()
         print_html_footer()
-    
-    elif username and password and username not in data:
-        try:
-            with open(users_data, "a") as f:
-                f.write(f"{username}:{password}:{email}\n")
-            redirect_to_login()
-        except Exception as e:
-            print_html_header()
-            print(f"<p>Error saving data: {e}</p>")
-            print_html_footer()
-    else:
-        print_html_header()
-        print("<p>Error: Username or password missing.</p>")
+        return
+
+    try:
+        with open(users_data, "a") as f:
+            f.write(f"{username}:{password}:{email}\n")
+    except Exception as e:
+        print(f'<div class="status-message error">Error saving data: {e}</div>')
+        print_register_form()
         print_html_footer()
+        return
+
+    # Set login cookie
+    cookie = http.cookies.SimpleCookie()
+    cookie["username"] = username
+    cookie["username"]["path"] = "/"
+
+    print(f'<div class="status-message success">Welcome, {username}! You have been registered and automatically logged in.</div>')
+    print("""
+    <section>
+      <h1>Explore More</h1>
+      <p>Be sure to check out our other pages to learn all about Racket, Java, and Python!</p>
+      <p>After exploring, take their individual quizzes to test your knowledge.</p>
+      <p>And when you’re ready, challenge yourself by taking the Ultimate Quiz!</p>
+      <p>All of these are easily accessible from our navigation bar at the top.</p>
+    </section>
+    """)
+    print_html_footer()
 
 if __name__ == "__main__":
     try:
@@ -64,4 +109,3 @@ if __name__ == "__main__":
     except Exception:
         import cgi
         cgi.print_exception()
-

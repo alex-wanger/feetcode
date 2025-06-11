@@ -1,63 +1,110 @@
 #!/usr/bin/env python3
 import cgi
 import http.cookies
-user_data = "/home/students/odd/2027/awang70/public_html/feetcode/.users_data.txt"
+import os
+
+users_data = "../Python/.users_data.txt"
 
 def print_html_header():
-    print("Content-Type: text/html\n")
-    print("""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Feetcode</title>
-    </head>
-    <body>
-        <h1>Feetcode</h1>
-    """)
+    print("""<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Feetcode</title>
+    <script src="../html/script.js"></script>
+    <link rel="stylesheet" href="../css/basic.css">
+</head>
+<body>
+<div id="header-container"></div>
+<main id="main-content">
+""")
 
 def print_html_footer():
     print("""
-    </body>
-    </html>
+</main>
+<div id="footer-container"></div>
+</body>
+</html>
+""")
+
+def print_login_form():
+    print("""
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="../Python/login.py" method="post">
+          <label for="userfield">Username or Email</label>
+          <input type="text" id="userfield" name="userfield" autocomplete="username" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+          <input type="submit" value="Login" class="submit-button">
+        </form>
+    </div>
     """)
 
-    print()
-
-def login():
+def main():
     form = cgi.FieldStorage()
-    username = form.getvalue("username")
+    userfield = form.getvalue("userfield")
     password = form.getvalue("password")
-    email = form.getvalue("email")
-    if not username or not password or not email:
+
+    if not userfield or not password:
+        print("Content-Type: text/html")
+        print()  # blank line
         print_html_header()
-        print("<p>Error: Please provide username, email and password.</p>")
+        print("<div class='status-message error'>Error: Please provide username/email and password.</div>")
+        print_login_form()
         print_html_footer()
         return
 
-    key_values = {}
-    with open(user_data, "r") as file:
-        for line in file:
-            line = line.strip()
-            key, value, email = line.split(":")
-            key_values[key] = value, email 
+    data = {}
+    try:
+        with open(users_data, "r") as file:
+            for line in file:
+                line = line.strip()
+                user, pw, email = line.split(":")
+                data[user] = (pw, email)
+    except FileNotFoundError:
+        pass
 
-    if (username in key_values and key_values[username] == password, email):
-#TODO, FIX THIS THERE ARE LOGIC ERRORS 
-        print(f"Set-Cookie: username={username}; Path=/")
-        print("Status: 302 Found")
-        print("Location: /~awang70/feetcode/Python/landing_page.py\n")
-    else:
+    valid_user = None
+    for user, (pw, email) in data.items():
+        if (userfield == user or userfield == email) and password == pw:
+            valid_user = user
+            break
+
+    if valid_user:
+        cookie = http.cookies.SimpleCookie()
+        cookie["username"] = valid_user
+        cookie["username"]["path"] = "/"
+
+        print("Status: 200 OK")
+        print("Content-Type: text/html")
+        print(cookie.output())
+        print()  
+
         print_html_header()
-        print(f"<p>Login failed: Invalid username or password.</p>")
+        print(f'<div class="status-message success">Welcome back, {valid_user}!</div>')
+        print("""
+        <section>
+          <h1>Explore More</h1>
+          <p>Be sure to check out our other pages to learn all about Racket, Java, and Python.</p>
+          <p>After exploring, take their individual quizzes to test your knowledge.</p>
+          <p>And when you're ready, challenge yourself by taking the Ultimate Quiz!</p>
+          <p>All of these are easily accessible from our navigation bar at the top.</p>
+        </section>
+        """)
         print_html_footer()
-
-def main():
-    login()
+    else:
+        print("Content-Type: text/html")
+        print()  
+        print_html_header()
+        print("<div class='status-message error'>Login failed: Invalid username/email or password.</div>")
+        print_login_form()
+        print_html_footer()
 
 if __name__ == "__main__":
     try:
         main()
-    except:
+    except Exception:
         cgi.print_exception()
-
