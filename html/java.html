@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Java</title>
   <script src="script.js"></script>
   <link rel="stylesheet" href="../css/basic.css" />
@@ -12,28 +13,288 @@
   <div id="header-container"></div>
 
   <main id="main-content">
+
     <section id="history">
       <h1>History of Java</h1>
-      <p>Java, developed at Sun Microsystems, Inc. by a team lead by James Gosling between 1991 and 1995, is a high-level, general-purpose, memory-safe, object-oriented programming language. It is intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need to recompile. (credits to britannica and wikipedia)</p>
+
+      <div class="subsection">
+        <div class="htext">
+          <p>Java was developed at <strong>Sun Microsystems, Inc.</strong> by a team led by <strong>James Gosling</strong> from 1991 to 1995. Originally called Oak, the language was designed to be portable, secure, and robust. Its primary goal was to enable the concept of "write once, run anywhere" (WORA), allowing compiled Java code to run on any device equipped with a Java Virtual Machine (JVM) without needing recompilation. <br> <br>
+
+          Since its release, Java has grown into one of the most widely-used programming languages in the world. It has been essential in enterprise applications, Android app development, web servers, and large-scale systems. Java's syntax is heavily influenced by C and C++, but it introduced automatic memory management (garbage collection) and a strong emphasis on security and portability. Java’s ecosystem includes an extensive standard library and vibrant open-source community.</p>
+        </div>
+
+        <figure class="inventor">
+          <img src="../images/gosling.jpg" alt="James Gosling" />
+          <figcaption><strong>James Gosling</strong></figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="basics">
-      <h1>Java Basics</h1>
-      <p>Variables, data types, and syntax form the building blocks of Java programs. Everything begins with a class and a main method.</p>
+      <h1>Basics of Java</h1>
+
+      <h2>Main Class</h2>
+      <div class="subsection">
+        <p>Every Java program starts with a <strong>class</strong> and a <strong>main</strong> method, which is the program’s entry point. Java syntax is similar to C/C++ with a clear, structured format using semicolons to end statements, curly braces {} to define code blocks, and strong typing for variables and methods.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>public class Main {<br>
+          &nbsp;&nbsp;public static void main(String[] args) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hello World");<br>
+          &nbsp;&nbsp;}<br>
+          }</p>
+
+        <p><strong>Output:</strong> Hello World</p>
+
+        <p><strong>Note:</strong> System.out.println() prints the text and moves to a new line, whereas System.out.print() prints text but stays on the same line.</p>
+      </div>
+
+      <h2>Variables and Data Types</h2>
+      <div class="subsection">
+        <p>Java is a statically typed language, so every variable must have a declared type.</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>String</td>
+                <td>Stores text data inside double quotes</td>
+                <td>String name = "Java";</td>
+              </tr>
+              <tr>
+                <td>int</td>
+                <td>Stores integers (whole numbers)</td>
+                <td>int age = 25;</td>
+              </tr>
+              <tr>
+                <td>float</td>
+                <td>Stores decimal numbers (single precision)</td>
+                <td>float price = 9.99f;</td>
+              </tr>
+              <tr>
+                <td>double</td>
+                <td>Stores decimal numbers (double precision)</td>
+                <td>double pi = 3.14159;</td>
+              </tr>
+              <tr>
+                <td>char</td>
+                <td>Stores a single character in single quotes</td>
+                <td>char letter = 'A';</td>
+              </tr>
+              <tr>
+                <td>boolean</td>
+                <td>Stores true or false</td>
+                <td>boolean isActive = true;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Variable assignment syntax:</strong> <em>type variableName = value;</em></p>
+      </div>
+
+      <h2>Arrays</h2>
+      <div class="subsection">
+        <p>Arrays hold multiple values of the same type in a fixed-size structure.</p> <br>
+
+        <p><strong>Example:</strong></p>
+        <p>int[] numbers = {1, 2, 3, 4, 5};<br>
+          System.out.println(numbers[2]);</p>
+
+        <p><strong>Output:</strong> 3</p>
+
+        <p>Note: Array indices start at 0.</p>
+      </div>
+
+     <h2>Loops</h2>
+      <div class="subsection">
+        <h3>For Loop</h3>
+        <p>A <strong>for loop</strong> repeats a block of code a specific number of times. It has three parts inside the parentheses:</p>
+        <ul>
+          <li><strong>Initialization:</strong> sets a starting point (e.g., int i = 0;)</li>
+          <li><strong>Condition:</strong> loop continues while this is true (e.g., i &lt; 3)</li>
+          <li><strong>Update:</strong> runs after each iteration (e.g., i++ increases i by 1)</li>
+        </ul>
+        <p>This structure controls how many times the loop runs.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>for (int i = 0; i &lt; 3; i++) {<br>
+          &nbsp;&nbsp;System.out.println(i);<br>
+          }</p>
+
+        <p><strong>Output:</strong><br>0<br>1<br>2</p>
+
+        <h3>While Loop</h3>
+        <p>A <strong>while loop</strong> keeps running as long as its condition remains true. You need to initialize variables before the loop, and update them inside the loop to avoid infinite loops.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>int i = 0;<br>
+          while (i &lt; 3) {<br>
+          &nbsp;&nbsp;System.out.println(i);<br>
+          &nbsp;&nbsp;i++;  // increase i to eventually stop the loop<br>
+          }</p>
+
+        <p><strong>Output:</strong><br>0<br>1<br>2</p>
+      </div>
+
     </section>
 
     <section id="OOP">
-      <h1>Object-Oriented Programming</h1>
-      <p>Java is built on OOP concepts: classes, objects, inheritance, polymorphism, encapsulation, and abstraction.</p>
+      <h1>Object-Oriented Programming (OOP)</h1>
+
+      <h2>Classes and Objects</h2>
+      <div class="subsection">
+        <p>A <strong>class</strong> is a blueprint defining the structure (fields) and behavior (methods) of objects. An <strong>object</strong> is an instance of a class representing something specific.</p>
+       
+        <p><strong>Example:</strong></p>
+        <p>
+          public class Student {<br>
+          &nbsp;&nbsp;String name;<br>
+          &nbsp;&nbsp;int age;<br><br>
+
+          &nbsp;&nbsp;void introduce() {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Hi, I'm " + name + ", and I'm " + age + " years old.");<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </p>
+
+        <p><strong>Usage:</strong></p>
+        <p>
+          Student sigma = new Student();<br>
+          sigma.name = "Sigma";<br>
+          sigma.age = 17;<br>
+          sigma.introduce();
+        </p>
+
+        <p><strong>Output:</strong></p>
+        <p>Hi, I'm Sigma, and I'm 17 years old.</p>
+      </div>
+
+      <h2>Fields (Instance Variables)</h2>
+      <div class="subsection">
+        <p>Fields hold data for each object. For example, name and age store each Student's information.</p>
+        <p><strong>Note:</strong> Use private fields with getters/setters to protect data (encapsulation).</p>
+      </div>
+
+      <h2>Methods</h2>
+      <div class="subsection">
+        <p>Methods define actions objects can perform. They can take parameters and return values.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>
+          public class Calculator {<br>
+          &nbsp;&nbsp;int add(int a, int b) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;return a + b;<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </p>
+
+        <p><strong>Usage:</strong></p>
+        <p>
+          Calculator calc = new Calculator();<br>
+          int sum = calc.add(5, 3);
+        </p>
+
+        <p><strong>Output:</strong></p>
+        <p>8</p>
+      </div>
+
+      <h2>Constructors</h2>
+      <div class="subsection">
+        <p>A <strong>constructor</strong> initializes new objects. It has the same name as the class and no return type.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>
+          public class Student {<br>
+          &nbsp;&nbsp;String name;<br>
+          &nbsp;&nbsp;int age;<br><br>
+
+          &nbsp;&nbsp;public Student(String name, int age) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;this.name = name;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;this.age = age;<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </p>
+
+        <p><strong>Usage:</strong></p>
+        <p>Student sigma = new Student("Sigma", 17);</p>
+      </div>
+
+      <h2>Inheritance</h2>
+      <div class="subsection">
+        <p>Inheritance lets a class reuse fields and methods from another class.</p>
+
+        <p><strong>Example:</strong></p>
+        <p>
+          public class Person {<br>
+          &nbsp;&nbsp;void greet() { System.out.println("Hello!"); }<br>
+          }<br><br>
+
+          public class Student extends Person {<br>
+          &nbsp;&nbsp;void study() { System.out.println("Studying hard!"); }<br>
+          }
+        </p>
+
+        <p><strong>Usage:</strong></p>
+        <p>
+          Student sigma = new Student();<br>
+          sigma.greet();<br>
+          sigma.study();
+        </p>
+
+        <p><strong>Output:</strong></p>
+        <p>
+          Hello!<br>
+          Studying hard!
+        </p>
+      </div>
+
+      <h2>Abstraction</h2>
+      <div class="subsection">
+        <p>Abstraction hides complex details and shows only essential features. Java uses abstract classes and interfaces for this.</p>
+
+        <p><strong>Example abstract class:</strong></p>
+        <p>
+          public abstract class Vehicle {<br>
+          &nbsp;&nbsp;abstract void start();<br><br>
+
+          &nbsp;&nbsp;void stop() {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Vehicle stopped.");<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </p>
+
+        <p><strong>Example subclass:</strong></p>
+        <p>
+          public class Car extends Vehicle {<br>
+          &nbsp;&nbsp;@Override<br>
+          &nbsp;&nbsp;void start() {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Car started.");<br>
+          &nbsp;&nbsp;}<br>
+          }
+        </p>
+      </div>
     </section>
+
+
 
     <div id="quiz">
       <a href="../html/jquiz.html" class="quiz-btn">
         Test your knowledge with the Java Quiz!
       </a>
     </div>
+
   </main>
 
   <div id="footer-container"></div>
 </body>
+
 </html>

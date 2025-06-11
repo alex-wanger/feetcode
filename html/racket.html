@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Racket</title>
-  <script src="script.js" > </script>
+  <script src="script.js"></script>
   <link rel="stylesheet" href="../css/basic.css" />
 </head>
 
@@ -15,15 +15,254 @@
   <main id="main-content">
 
     <section id="history">
-     <h1>History of Racket</h1>
-        <p>Racket is a general-purpose, multi-paradigm programming language. The Racket language is a modern dialect of Lisp and a descendant of Scheme. It is designed as a platform for programming language design and implementation. (credits to wikipedia)</p>
+      <h1>History of Racket</h1>
+      <div class="subsection">
+        <div class="htext">
+          <p>Racket is a general-purpose, multi-paradigm programming language. It is a modern dialect of Lisp and a descendant of Scheme. Racket was created to support language development, education, and research in computer science.<br><br>
+          It was designed by <strong>Matthias Felleisen</strong> and his team as part of the <em>PLT (Programming Language Team)</em>. The project began in the mid-1990s and evolved into one of the most flexible and educationally-used functional languages today.<br><br>
+          Racket is known for its powerful macro system and language extensibility, allowing programmers to create custom languages. It is widely used in academic settings as well as practical software development.</p>
+        </div>
+        <figure class="inventor">
+      		 <img src="../images/felleisen.jpg" alt="Matthias Felleisen - Creator of Racket">
+      		<figcaption><strong>Matthias Felleisen</strong></figcaption>
+    	  </figure>
+      
+      </div>
     </section>
-    
+
     <section id="basics">
-    <h1>Basic Racket Functions</h1>
-    <p>In DrRacket, math functions follow prefix notation, meaning the operator comes before the operands. For basic arithmetic, expressions like (+ 3 4), (- 10 2), (\* 6 5), and (/ 20 4) evaluate to 7, 8, 30, and 5 respectively. More advanced functions are also built-in. You can calculate square roots with (sqrt 9), exponents with (expt 2 3) for 2 to the power of 3, absolute values using (abs -7), and use (modulo 10 3) or (remainder 10 3) for modulus operations. </p>
-<br>
-<p>Trigonometric functions use radians by default. For example, (sin 0) returns 0, (cos 0) returns 1, and (tan 0) returns 0. Inverse trig functions like (asin 1) and (atan 1) return pi divided by 2 and pi divided by 4 respectively. To work with logarithms, (log 10) gives the natural log of 10, while (log10 1000) returns the base-10 log (3.0). The exponential function (exp 1) returns e to the power of 1, approximately 2.718.</p>
+      <h1>Basics of Racket</h1>
+
+      <h2>Print Statements</h2>
+      <div class="subsection">
+        <p>In Racket, expressions are written using parentheses. Functions are placed before the values they act on (prefix notation).</p>
+        <p><strong>Example:</strong> (print "Hello World")</p>
+        <p><strong>Output:</strong> Hello World</p>
+      </div>
+
+      <h2>Math Basics</h2>
+      <div class="subsection">
+        <p>All math in Racket uses prefix notation. Here's a breakdown of some basic math functions:</p>
+        <div class="table-container">
+          <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Operator</th>
+              <th>Example</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Addition</td>
+              <td>+</td>
+              <td>(+ 3 4)</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Subtraction</td>
+              <td>-</td>
+              <td>(- 10 2)</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Multiplication</td>
+              <td>*</td>
+              <td>(* 6 5)</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td>Division</td>
+              <td>/</td>
+              <td>(/ 20 4)</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Square Root</td>
+              <td>sqrt</td>
+              <td>(sqrt 9)</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Exponent</td>
+              <td>expt</td>
+              <td>(expt 2 3)</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Absolute Value</td>
+              <td>abs</td>
+              <td>(abs -7)</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Modulus</td>
+              <td>modulo</td>
+              <td>(modulo 10 3)</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Remainder</td>
+              <td>remainder</td>
+              <td>(remainder 10 3)</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h2>Trigonometry</h2>
+      <div class="subsection">
+        <p>Racket’s trig functions use radians. Here's how some work:</p>
+        <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Operator</th>
+              <th>Example</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sine</td>
+              <td>sin</td>
+              <td>(sin 0)</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Cosine</td>
+              <td>cos</td>
+              <td>(cos 0)</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Tangent</td>
+              <td>tan</td>
+              <td>(tan 0)</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Arcsin</td>
+              <td>asin</td>
+              <td>(asin 1)</td>
+              <td>π/2</td>
+            </tr>
+            <tr>
+              <td>Arctan</td>
+              <td>atan</td>
+              <td>(atan 1)</td>
+              <td>π/4</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h2>Logarithms & Exponentials</h2>
+      <div class="subsection">
+        <p>Use these functions for logs and exponential calculations:</p>
+        <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Operator</th>
+              <th>Example</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Natural Log</td>
+              <td>log</td>
+              <td>(log 10)</td>
+              <td>~2.302</td>
+            </tr>
+            <tr>
+              <td>Base-10 Log</td>
+              <td>log10</td>
+              <td>(log10 1000)</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Exponential</td>
+              <td>exp</td>
+              <td>(exp 1)</td>
+              <td>~2.718</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+    <h2>Variables and Functions</h2>
+    <div class="subsection">
+      <p>To define a function, use the keyword <strong>define</strong> followed by a name and input.</p>
+      <p><strong>Example:</strong> (define (square x) (* x x))</p>
+      <p><strong>Usage:</strong> (square 5)</p>
+      <p><strong>Output:</strong> 25</p>
+    </div>
+
+    <h2>Conditional Logic</h2>
+    <div class="subsection">
+      <p>Racket supports two main forms of conditionals: <strong>if</strong> (simple) and <strong>cond</strong> (multiple branches).</p>
+      <p><strong>Example (if):</strong> (if (> 3 2) "Yes" "No")</p>
+      <p><strong>Output:</strong> Yes</p>
+      <br>
+      <p><strong>Example (cond):</strong></p>
+      <p>(define x 7)</p>
+      <p>(cond</p>
+      <p>&nbsp;&nbsp;[(> x 10) "Too big"]</p>
+      <p>&nbsp;&nbsp;[(< x 5) "Too small"]</p>
+      <p>&nbsp;&nbsp;[else "Just right"])</p>
+      <p><strong>Usage:</strong> Evaluate with x set to 7</p>
+      <p><strong>Output:</strong> Just right</p>
+    </div>
+
+    <h2>Lists</h2>
+    <div class="subsection">
+      <p>Use the <strong>list</strong> function to create a list:</p>
+      <p><strong>Example:</strong> (define mylist (list 1 2 3 4))</p>
+      <p><strong>Usage:</strong> mylist</p>
+      <p><strong>Output:</strong> (1 2 3 4)</p>
+      <br>
+      <p>To get the first item in a list, use <strong>car</strong> or <strong>first</strong>.</p>
+      <p><strong>Usage:</strong> (car mylist) or (first mylist)</p>
+      <p><strong>Output:</strong> 1</p>
+      <br>
+      <p>To get the rest of the list (without the first item), use <strong>cdr</strong> or <strong>rest</strong>.</p>
+      <p><strong>Usage:</strong> (cdr mylist) or (rest mylist)</p>
+      <p><strong>Output:</strong> (2 3 4)</p>
+      <br>
+      <p>You can add elements to the front using <strong>cons</strong>:</p>
+      <p><strong>Example:</strong> (cons 0 mylist)</p>
+      <p><strong>Output:</strong> (0 1 2 3 4)</p>
+    </div>
+
+    <h2>Lambda Expressions</h2>
+    <div class="subsection">
+      <p>A <strong>lambda</strong> expression creates an anonymous (temporary) function.</p>
+      <p><strong>Example:</strong> ((lambda (x) (+ x 1)) 4)</p>
+      <p><strong>Output:</strong> 5</p>
+    </div>
+
+    <h2>Recursion</h2>
+    <div class="subsection">
+      <p>Recursion is when a function calls itself. You must define a <strong>base case</strong> (when to stop) and a <strong>recursive case</strong> (the repeat).</p>
+      <p><strong>Example:</strong></p>
+      <p>(define (factorial n)</p>
+      <p>&nbsp;&nbsp;(if (= n 0)</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;1</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;(* n (factorial (- n 1)))))</p>
+      <p><strong>Usage:</strong> (factorial 4)</p>
+      <p><strong>Output:</strong> 24</p>
+      <br>
+      <p><strong>Explanation:</strong> This recursive function multiplies down to 1. The base case is when <em>n = 0</em>, and it returns 1. Otherwise, it keeps calling itself with a smaller number. It multiplies 4 × 3 × 2 × 1. </p>
+    </div>
 
     </section>
 

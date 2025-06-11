@@ -16,9 +16,20 @@
 
 	<section id="history">
 		<h1>History of Python</h1>
-		<p>Python was created in the late 1980s by <strong>Guido van Rossum</strong> at <em>Centrum Wiskunde & Informatica (CWI)</em> in the Netherlands. It was officially released in 1991. The name "Python" was inspired not by the snake, but by the British comedy series <em>Monty Python's Flying Circus</em>.</p>
-		<p>Python was designed to be simple and readable, with a clean syntax that emphasizes ease of use. Its use of indentation to define code blocks is one of its most recognizable features. Over time, Python has become a powerful language used in fields such as web development, machine learning, automation, and education.</p>
+
+		<div class="subsection">
+
+		<div class = htext>
+		<p>Python was created in the late 1980s by <strong>Guido van Rossum</strong> at <em>Centrum Wiskunde & Informatica (CWI)</em> in the Netherlands. It was officially released in 1991. The name "Python" was inspired not by the snake, but by the British comedy series <em>Monty Python's Flying Circus</em>.</p> <br>
+		<p>Python was designed to be simple and readable, with a clean syntax that emphasizes ease of use. Its use of indentation to define code blocks is one of its most recognizable features. Over time, Python has become a powerful language used in fields such as web development, machine learning, automation, and education.</p> <br>
 		<p>Its rich ecosystem of libraries and its welcoming community have helped make it one of the most popular programming languages in the world today.</p>
+		</div>
+		<figure class="inventor">
+      		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg/500px-Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg" alt="Guido van Rossum">
+      		<figcaption><strong>Guido van Rossum</strong></figcaption>
+    	</figure>
+		</div>
+
 	</section>
 
 	<section id="basics">
@@ -27,7 +38,7 @@
 		<h2>Print Statements</h2>
 		<div class="subsection">
 		<p>The <strong>print()</strong> function is used to display text or results on the screen.</p>
-		<p>Example: <em>print("Hello, world!")</em></p>
+		<p><strong>Example:</strong> <em>print("Hello, world!")</em></p>
 		<p><strong>Output:</strong> Hello, world!</p>
 		</div>
 
@@ -63,7 +74,7 @@
 				<tr>
 				<td>Mapping</td>
 				<td>dict</td>
-				<td>Key-value pairs (e.g., {"name": "Alice"})</td>
+				<td>Key-value pairs (e.g., {"name": "Sigma"})</td>
 				</tr>
 				<tr>
 				<td>Set</td>
@@ -98,29 +109,29 @@
 			<li><strong>Comparison:</strong> == (equal), != (not equal), >, <, >=, <=</li>
 			<li><strong>Logical:</strong> and, or, not</li>
 		</ul>
-		<p>Example: <em>5 + 3 * 2</em></p>
+		<p><strong>Example:</strong> <em>5 + 3 * 2</em></p>
 		<p><strong>Output:</strong> 11</p>
 		</div>
 
 		<h2>Functions</h2>
 		<div class="subsection">
 		<p>Functions are blocks of reusable code defined using the <strong>def</strong> keyword. Use <strong>return</strong> to send back a value.</p>
-		<p>Example:</p>
+		<p><strong>Example:</strong></p>
 		<p><em>def greet(name): return "Hi " + name</em></p>
-		<p><em>greet("Ali")</em></p>
-		<p><strong>Output:</strong> Hi Ali</p>
+		<p><em>greet("Sigma")</em></p>
+		<p><strong>Output:</strong> Hi Sigma</p>
 		</div>
 
 		<h2>Loops</h2>
 		<div class="subsection">
 		<h3>For Loops</h3>
 		<p>Used for iterating over sequences like lists, ranges, or strings.</p>
-		<p>Example: <em>for i in range(3): print(i)</em></p>
+		<p><strong>Example:</strong> <em>for i in range(3): print(i)</em></p>
 		<p><strong>Output:</strong><br>0<br>1<br>2</p>
 
 		<h3>While Loops</h3>
 		<p>Executes code repeatedly as long as a condition is true.</p>
-		<p>Example:</p>
+		<p><strong>Example:</strong></p>
 		<p><em>i = 0<br>while i < 3:<br>&nbsp;&nbsp;&nbsp;print(i)<br>&nbsp;&nbsp;&nbsp;i += 1</em></p>
 		<p><strong>Output:</strong><br>0<br>1<br>2</p>
 		</div>
@@ -133,27 +144,84 @@
 			<li>Mutable (can be updated)</li>
 			<li>Indexed from 0</li>
 		</ul>
-		<p>Example: <em>my_list = [1, 2, "hello"]</em><br><em>print(my_list[2])</em></p>
+		<p><strong>Example:</strong> <em>my_list = [1, 2, "hello"]</em><br><em>print(my_list[2])</em></p>
 		<p><strong>Output:</strong> hello</p>
 		</div>
 
 		<h2>Dictionaries</h2>
 		<div class="subsection">
 		<p>Dictionaries store data in key-value pairs. They are unordered, changeable, and do not allow duplicate keys.</p>
-		<p>Example: <em>student = {"name": "Lina", "age": 16}</em><br><em>print(student["name"])</em></p>
+		<p><strong>Example:</strong> <em>student = {"name": "Lina", "age": 16}</em><br><em>print(student["name"])</em></p>
 		<p><strong>Output:</strong> Lina</p>
 		</div>
 	</section>
 
 	<section id="libraries">
 		<h1>Common Libraries</h1>
-
 		<h2>Matplotlib</h2>
+		<div class="subsection">
 		<p><strong>Matplotlib</strong> is used to create graphs and plots in Python. It is especially useful for data visualization in science, engineering, and data analysis. You can make line graphs, bar charts, scatter plots, and more.</p>
+		<div class="example-container">
+			<div class="input">
+				<p><strong>Example: </strong>
+					<br>import matplotlib.pyplot as plt<br>
+						import numpy as np <br><br>
+
+						xpoints = np.array([0,5])<br>
+						ypoints = np.array([0,5])<br><br>
+
+						plt.plot(xpoints, ypoints) <br>
+				plt.show ()</p>
+			</div>
+			<div class="ouput">
+				<p><strong>Output:</strong></p>
+				<img id ="upic" src="../images/line.png" alt="Simple Graph">
+			</div>
+		</div>
+		
+		
+		<br>
+		<h3>Here are some charts and graphs you can make with Matplotlib!</h2>
+			
+		<div class="gallery-carousel">
+			<button class="prev-btn" onclick="prevImage()">&#10094;</button>
+			
+			<figure class="carousel-image">
+				<img id="carousel-img" src="../images/scatterplot.png" alt="Scatter Plot">
+				<figcaption id="carousel-caption">Scatter Plot</figcaption>
+			</figure>
+			
+			<button class="next-btn" onclick="nextImage()">&#10095;</button>
+		</div>
+
+		</div>
+
+
 
 		<h2>Turtle</h2>
+		<div class="subsection">
 		<p>The <strong>turtle</strong> module allows users to draw shapes and patterns by controlling a virtual "turtle" on screen. It's great for learning programming and visual creativity.</p>
-		<p>Examples for both will be shown with images.</p>
+		
+		<div class="example-container">
+			<div class="input">
+				<p><strong>Example:</strong> <br>import turtle
+					turtle = turtle.Turtle() <br>
+					<br>
+					for i in range (0, 5):<br>
+						&nbsp;&nbsp;&nbsp; turtle.right(72) <br>
+						&nbsp;&nbsp;&nbsp; turtle.forward(50) <br>
+						turtle.done()
+
+				</p>
+			</div>
+			<div class="ouput">
+				<p><strong>Output:</strong></p>
+				<img id="upic" src="../images/turtle.png" alt="Pentagon using Turtles">
+			</div>
+		</div>
+
+		<h3>Tessellation using Turtles!</h3>
+		<img id="Tessellation" src="../images/testurtle.png" alt="Tessellation using Turtles">
 
   </section>
 

@@ -67,6 +67,22 @@ body {
   margin: 2rem 0;
 }
 
+#history .subsection{
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+#history .inventor {
+  text-align: center;
+  ;
+}
+
+#history .inventor img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 .quiz-btn {
   display: inline-flex;
@@ -91,7 +107,7 @@ body {
   overflow-x: auto;
   margin: 1.5rem 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 table {
@@ -123,4 +139,79 @@ th {
   background-color: #f8faff;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.gallery-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+.carousel-image {
+  text-align: center;
+}
+
+.carousel-image img[alt="Scatter Plot"],
+.carousel-image img[alt="Bar Graph"]{
+  width: 700px;
+
+  border-radius: 8px;
+}
+
+.carousel-image img{
+  width: 100%;
+}
+
+.carousel-image figcaption {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: black;
+}
+
+.prev-btn,
+.next-btn {
+  font-weight: bold;
+  color: #000;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  font-size: 2rem;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #555;
+   transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+
+.example-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
+    }
+    .output,.input {
+      flex: 1;
+    }
+
+#upic{
+  max-width: 80%;
+      height: auto;
+      border: 1px solid #ccc;
+}
+
+#Tessellation{
+  max-width:80%;
+  height: auto;
+  border: 1px solid #ccc;
+  align-items: center;
+  display: block; margin: 0 auto;
 }
