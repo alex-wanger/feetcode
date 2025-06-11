@@ -215,3 +215,102 @@ th {
   align-items: center;
   display: block; margin: 0 auto;
 }
+
+.form-container {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+   background-color: #555;
+   transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+
+.status-message {
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.status-message.error {
+    background-color: #ffe0e0;
+    color: #c0392b;
+    border: 1px solid #e74c3c;
+}
+
+.status-message.success {
+    background-color: #e0ffe0;
+    color: #2e7d32;
+    border: 1px solid #27ae60;
+}
+
+
+
+#why-code ul,
+#what-learn ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+#why-code ul li,
+#what-learn ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+#video iframe {
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+#get-started {
+  text-align: center;
+}
+
