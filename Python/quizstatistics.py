@@ -29,4 +29,7 @@ def addData(list1):
     print("data succesfully written")  
   
 initalize()
+
 addData(['Java', 'A', "B", "C","D","A", "B", "B"]) 
+addData(["Python","C", "B", "C", "A", "B", "A", "B"])
+addData(["Racket","B", "C", "B", "C", "A", "B", "C"])

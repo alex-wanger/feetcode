@@ -12,18 +12,22 @@ def print_html_header():
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Ultimate Quiz</title>
+      <title>Quiz Results</title>
       <script src="../html/script.js"></script>
       <link rel="stylesheet" href="../css/basic.css" />
     </head>
     <body>
       <div id="header-container"></div>
+      <main id="main-content">
+        <section id="chart">
       <div>
     """)
 
 def print_html_footer():
     print("""
       </div>
+      </section>
+      </main>
       <div id="footer-container"></div>
     </body>
     </html>
@@ -60,8 +64,8 @@ def quiz():
     
     
     
-    print(f"<h2>Quiz Language: {topic}</h2>")
-    print(f"<p>You got {counter} out of {len(answer_key)} correct.</p>")
+    print(f"<h1>Quiz Language: {topic}</h1>")
+    print(f"<p>You got {counter} out of {len(answer_key)} questions correct.</p>")
     
     labels = ['Correct', 'Incorrect']
     sizes = [counter, len(answer_key) - counter]
@@ -76,7 +80,7 @@ def quiz():
     plt.savefig(chart_path)
     plt.close()
 
-    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
+    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart"/>')
 
 
 
