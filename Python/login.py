@@ -58,6 +58,7 @@ def main():
         return
 
     data = {}
+    try:
         with open(users_data, "r") as file:
             for line in file:
                 line = line.strip()

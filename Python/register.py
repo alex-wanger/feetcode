@@ -54,10 +54,13 @@ def main():
     password = form.getvalue("password")
     email = form.getvalue("email")
     data = {}
+    try:
         with open(users_data, "r") as file:
             for line in file:
                 user, pw, em = line.strip().split(":")
                 data[user] = (pw, em)
+    except FileNotFoundError:
+        pass  
 
     print_html_header()
 
@@ -67,12 +70,13 @@ def main():
         print_html_footer()
         return
 
+   
     if username in data:
         print('<div class="status-message error">Username taken. Try with a new one.</div>')
         print_register_form()
         print_html_footer()
         return
-
+    try:
         with open(users_data, "a") as f:
             f.write(f"{username}:{password}:{email}\n")
     except Exception as e:
