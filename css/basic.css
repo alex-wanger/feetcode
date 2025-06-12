@@ -284,7 +284,7 @@ th {
     border: 1px solid #e74c3c;
 }
 
-.smessage.success {
+.stmessage.success {
     background-color: #e0ffe0;
     color: #2e7d32;
     border: 1px solid #27ae60;
