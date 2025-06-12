@@ -2,7 +2,9 @@
 import cgi
 import csv
 import matplotlib.pyplot as plt
+import numpy as np
 
+file_path = "data.csv"
 
 def print_html_header():
     print("Content-Type: text/html\n")
@@ -33,6 +35,20 @@ def print_html_footer():
     </html>
     """)
 
+def addData(list1):
+    data = []
+    with open(file_path, 'a', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+
+        if len(list1) != 8:
+            print(f"Error, list length {len(list1)} is incorrect")
+            return None
+
+        for i in range(len(list1)):
+            data.append(list1[i])
+        csv_writer.writerow(data)
+
+
 def get_answer_key(topic):
     file_path = '../output.csv'
     with open(file_path, 'r', newline='') as csvfile:
@@ -55,7 +71,13 @@ def quiz():
     if not answer_key:
         return
 
+
+    addData([form.getvalue("quizTopic"),form.getvalue("q1"),form.getvalue("q2"),form.getvalue("q3"),
+              form.getvalue("q4"),form.getvalue("q5"),form.getvalue("q6"),
+              form.getvalue("q7")])
+
     response_data = []
+
     for i in range(len(answer_key)):
         answer = form.getvalue("q" + str(i+1))
         response_data.append(answer)
@@ -64,7 +86,7 @@ def quiz():
     
     
     
-    print(f"<h1>Quiz Language: {topic}</h1>")
+    print(f"<h1>{topic} Quiz</h1>")
     print(f"<p>You got {counter} out of {len(answer_key)} questions correct.</p>")
     
     labels = ['Correct', 'Incorrect']
@@ -76,11 +98,11 @@ def quiz():
     plt.axis('equal') 
 
     
-    chart_path = "/home/students/odd/2027/awang70/public_html/feetcode/images/quiz_result.png"
+    chart_path = "../images/quiz_result.png"
     plt.savefig(chart_path)
     plt.close()
 
-    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart"/>')
+    print('<img src="../images/quiz_result.png" alt="Quiz Result Chart"/>')
 
 
 
@@ -100,3 +122,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

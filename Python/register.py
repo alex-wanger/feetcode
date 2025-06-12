@@ -65,14 +65,14 @@ def main():
     print_html_header()
 
     if not username or not password or not email:
-        print('<div class="smessage error">Missing fields. Please go back and try again.</div>')
+        print('<div class="status-message error">Missing fields. Please go back and try again.</div>')
         print_register_form()
         print_html_footer()
         return
 
    
     if username in data:
-        print('<div class="smessage error">Username taken. Try with a new one.</div>')
+        print('<div class="status-message error">Username taken. Try with a new one.</div>')
         print_register_form()
         print_html_footer()
         return
@@ -80,7 +80,7 @@ def main():
         with open(users_data, "a") as f:
             f.write(f"{username}:{password}:{email}\n")
     except Exception as e:
-        print(f'<div class="smessage error">Error saving data: {e}</div>')
+        print(f'<div class="status-message error">Error saving data: {e}</div>')
         print_register_form()
         print_html_footer()
         return
@@ -89,7 +89,7 @@ def main():
     cookie["username"] = username
     
 
-    print(f'<div class="smessage success">Welcome, {username}! You have been registered and automatically logged in.</div>')
+    print(f'<div class="status-message success">Welcome, {username}! You have been registered and automatically logged in.</div>')
     print("""
     <section>
       <h1>Explore More</h1>

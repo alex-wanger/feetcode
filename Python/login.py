@@ -52,7 +52,7 @@ def main():
         print("Content-Type: text/html")
         print() 
         print_html_header()
-        print("<div class='smessage error'>Error: Please provide username/email and password.</div>")
+        print("<div class='status-message error'>Error: Please provide username/email and password.</div>")
         print_login_form()
         print_html_footer()
         return
@@ -82,7 +82,7 @@ def main():
         print()  
 
         print_html_header()
-        print(f'<div class="smessage success">Welcome back, {valid_user}!</div>')
+        print(f'<div class="status-message success">Welcome back, {valid_user}!</div>')
         print("""
         <section>
           <h1>Explore More</h1>
@@ -97,7 +97,7 @@ def main():
         print("Content-Type: text/html")
         print()  
         print_html_header()
-        print("<div class='smessage error'>Login failed: Invalid username/email or password.</div>")
+        print("<div class='status-message error'>Login failed: Invalid username/email or password.</div>")
         print_login_form()
         print_html_footer()
 
