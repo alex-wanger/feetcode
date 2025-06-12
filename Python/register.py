@@ -85,8 +85,7 @@ def main():
         print_register_form()
         print_html_footer()
         return
-
-    # Set login cookie
+        
     cookie = http.cookies.SimpleCookie()
     cookie["username"] = username
     cookie["username"]["path"] = "/"

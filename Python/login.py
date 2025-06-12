@@ -50,7 +50,7 @@ def main():
 
     if not userfield or not password:
         print("Content-Type: text/html")
-        print()  # blank line
+        print() 
         print_html_header()
         print("<div class='status-message error'>Error: Please provide username/email and password.</div>")
         print_login_form()
@@ -58,7 +58,6 @@ def main():
         return
 
     data = {}
-    try:
         with open(users_data, "r") as file:
             for line in file:
                 line = line.strip()
@@ -76,9 +75,7 @@ def main():
     if valid_user:
         cookie = http.cookies.SimpleCookie()
         cookie["username"] = valid_user
-        cookie["username"]["path"] = "/"
-
-        print("Status: 200 OK")
+    
         print("Content-Type: text/html")
         print(cookie.output())
         print()  

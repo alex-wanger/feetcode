@@ -70,11 +70,11 @@ def quiz():
     plt.axis('equal') 
 
     
-    chart_path = "/home/students/odd/2027/awang70/public_html/feetcode/images/quiz_result.png"
+    chart_path = "../images/quiz_result.png"
     plt.savefig(chart_path)
     plt.close()
 
-    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
+    print('<img src="../images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
 
 
 
