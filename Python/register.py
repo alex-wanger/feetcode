@@ -53,6 +53,11 @@ def main():
     username = form.getvalue("username")
     password = form.getvalue("password")
     email = form.getvalue("email")
+    data = {}
+        with open(users_data, "r") as file:
+            for line in file:
+                user, pw, em = line.strip().split(":")
+                data[user] = (pw, em)
 
     print_html_header()
 
@@ -62,22 +67,12 @@ def main():
         print_html_footer()
         return
 
-    data = {}
-    try:
-        with open(users_data, "r") as file:
-            for line in file:
-                user, pw, em = line.strip().split(":")
-                data[user] = (pw, em)
-    except FileNotFoundError:
-        pass  # No users yet
-
     if username in data:
         print('<div class="status-message error">Username taken. Try with a new one.</div>')
         print_register_form()
         print_html_footer()
         return
 
-    try:
         with open(users_data, "a") as f:
             f.write(f"{username}:{password}:{email}\n")
     except Exception as e:
@@ -85,10 +80,10 @@ def main():
         print_register_form()
         print_html_footer()
         return
-        
+
     cookie = http.cookies.SimpleCookie()
     cookie["username"] = username
-    cookie["username"]["path"] = "/"
+    
 
     print(f'<div class="status-message success">Welcome, {username}! You have been registered and automatically logged in.</div>')
     print("""
