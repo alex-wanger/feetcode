@@ -1,80 +1,96 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 import cgi
-import csv 
-import pandas as pd
-from matplotlib import pyplot as plt
+import csv
+import matplotlib.pyplot as plt
+
 
 def print_html_header():
     print("Content-Type: text/html\n")
     print("""
-  <!DOCTYPE html>
-<html lang="en">
-  
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ultimate Quiz</title>
-  <script src="../html/script.js" > </script>
-  <link rel="stylesheet" href="../css/basic.css" />
-</head>
-<body>
-  <div id="header-container"></div>
-  <div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Ultimate Quiz</title>
+      <script src="../html/script.js"></script>
+      <link rel="stylesheet" href="../css/basic.css" />
+    </head>
+    <body>
+      <div id="header-container"></div>
+      <div>
     """)
 
 def print_html_footer():
     print("""
-    </div>
-    <div id="footer-container"></div>
-</body>
-
-</html>
+      </div>
+      <div id="footer-container"></div>
+    </body>
+    </html>
     """)
 
-    print()
 def get_answer_key(topic):
     file_path = 'output.csv'
-    
     with open(file_path, 'r', newline='') as csvfile:
         reader = csv.reader(csvfile)
         header = next(reader)
-
-        for row in csv_reader:
+        for row in reader:
             if row[0].strip().lower() == topic.strip().lower():
                 return row[1:]
-    print(f"data for {topic} not in CSV")
+    print(f"<p>Error: data for {topic} not in CSV</p>")
+    return None
 
 def quiz():
     form = cgi.FieldStorage()
-    
-    response_data = []
-    
-    counter = 0
-
     topic = form.getvalue("quizTopic")
-    
-    answer_key = get_answer_key(topic)
-    
-    if len(answer_key) != len(response_data):
-        print("Error, please submit all values!")
-        return 0
+    if not topic:
+        print(f"<p>Error: {topic}quizTopic not provided.</p>")
+        return
 
+    answer_key = get_answer_key(topic)
+    if not answer_key:
+        return
+
+    response_data = []
     for i in range(len(answer_key)):
-       if answer_key[i] == form.getvalue("r" + str(i)):
-           counter += 1
-    #change
-    values = [(counter/5) * 100, (counter/5) * 100]
-    labels = 'True', 'False'
-    print(f"{counter}")
-    #plt.pie(values)
+        answer = form.getvalue("r" + str(i+1))
+        response_data.append(answer)
+
+    counter = sum(1 for i in range(len(answer_key)) if answer_key[i] == response_data[i])
+    
+    print(f"<h2>Quiz Language: {topic}</h2>")
+    print(f"<p>You got {counter} out of {len(answer_key)} correct.</p>")
+    
+    labels = ['Correct', 'Incorrect']
+    sizes = [counter, len(answer_key) - counter]
+    colors = ['Blue', 'Red']
+
+    plt.figure(figsize=(4, 4))
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colors, startangle=140)
+    plt.axis('equal') 
+
+    
+    chart_path = "quiz_result.png"
+    plt.savefig(chart_path)
+    plt.close()
+
+    print(f'<img src="quiz_result.png" alt="Quiz Result Chart" width="300"/>')
+
+
+
+
+    
+
 def printhtml():
     print_html_header()
     quiz()
     print_html_footer()
-def main():
-    if __name__ == "__main__":
-        try:
-            printhtml()
-        except:
-            cgi.print_exception()
 
+def main():
+    try:
+        printhtml()
+    except:
+        cgi.print_exception()
+
+if __name__ == "__main__":
+    main()
