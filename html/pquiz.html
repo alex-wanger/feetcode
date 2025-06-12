@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Python Quiz</title>
-  <script src="script.js" > </script>
+  <script src="script.js"></script>
   <link rel="stylesheet" href="../css/basic.css" />
 </head>
 
@@ -13,7 +13,72 @@
   <div id="header-container"></div>
 
   <main id="main-content">
+    <section id="aquiz">
+      <h1>Python Quiz</h1>
+      <form action="../Python/quiz.py" method="post" class="quiz-form">
+        
+        <div class="subsection">
+          <p><strong>1. Who created Python?</strong></p>
+          <label><input type="radio" name="q1" value="A" required> Dennis Ritchie</label><br>
+          <label><input type="radio" name="q1" value="B"> James Gosling</label><br>
+          <label><input type="radio" name="q1" value="C"> Guido van Rossum</label><br>
+          <label><input type="radio" name="q1" value="D"> Bjarne Stroustrup</label>
+        </div>
 
+        <div class="subsection">
+          <p><strong>2. What is the correct way to print "Hello, world!" in Python?</strong></p>
+          <label><input type="radio" name="q2" value="A" required> print Hello, world!</label><br>
+          <label><input type="radio" name="q2" value="B"> print("Hello, world!")</label><br>
+          <label><input type="radio" name="q2" value="C"> echo "Hello, world!"</label><br>
+          <label><input type="radio" name="q2" value="D"> cout &lt;&lt; "Hello, world!"</label>
+        </div>
+
+        <div class="subsection">
+          <p><strong>3. Which data type is used to store a list of values?</strong></p>
+          <label><input type="radio" name="q3" value="A" required> int</label><br>
+          <label><input type="radio" name="q3" value="B"> str</label><br>
+          <label><input type="radio" name="q3" value="C"> list</label><br>
+          <label><input type="radio" name="q3" value="D"> bool</label>
+        </div>
+
+        <div class="subsection">
+          <p><strong>4. What keyword is used to define a function in Python?</strong></p>
+          <label><input type="radio" name="q4" value="A" required> def</label><br>
+          <label><input type="radio" name="q4" value="B"> function</label><br>
+          <label><input type="radio" name="q4" value="C"> define</label><br>
+          <label><input type="radio" name="q4" value="D"> fun</label>
+        </div>
+
+        <div class="subsection">
+          <p><strong>5. What is the output of this code: print(3 + 2 * 4)?</strong></p>
+          <label><input type="radio" name="q5" value="A" required> 20</label><br>
+          <label><input type="radio" name="q5" value="B"> 11</label><br>
+          <label><input type="radio" name="q5" value="C"> 14</label><br>
+          <label><input type="radio" name="q5" value="D"> 9</label>
+        </div>
+
+        <div class="subsection">
+          <p><strong>6. Which library is used to create graphs and plots in Python?</strong></p>
+          <label><input type="radio" name="q6" value="A" required> matplotlib</label><br>
+          <label><input type="radio" name="q6" value="B"> pandas</label><br>
+          <label><input type="radio" name="q6" value="C"> turtle</label><br>
+          <label><input type="radio" name="q6" value="D"> numpy</label>
+        </div>
+
+        <div class="subsection">
+          <p><strong>7. What is the purpose of the turtle module?</strong></p>
+          <label><input type="radio" name="q7" value="A" required> Creating 3D models</label><br>
+          <label><input type="radio" name="q7" value="B"> Drawing shapes and patterns</label><br>
+          <label><input type="radio" name="q7" value="C"> Data analysis</label><br>
+          <label><input type="radio" name="q7" value="D"> Running server apps</label>
+        </div>
+
+        <div class="quiz-footer">
+          <button type="submit" class="quiz-btn">Submit Quiz</button>
+        </div>
+
+      </form>
+    </section>
   </main>
 
   <div id="footer-container"></div>

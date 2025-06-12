@@ -268,7 +268,7 @@ th {
 }
 
 
-.status-message {
+.smessage {
     padding: 1em;
     margin: 1em 0;
     border-radius: 10px;
@@ -278,13 +278,13 @@ th {
     box-sizing: border-box;
 }
 
-.status-message.error {
+.smessage.error {
     background-color: #ffe0e0;
     color: #c0392b;
     border: 1px solid #e74c3c;
 }
 
-.status-message.success {
+.smessage.success {
     background-color: #e0ffe0;
     color: #2e7d32;
     border: 1px solid #27ae60;
