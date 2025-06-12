@@ -30,13 +30,13 @@ def print_html_footer():
     """)
 
 def get_answer_key(topic):
-    file_path = 'output.csv'
+    file_path = '../output.csv'
     with open(file_path, 'r', newline='') as csvfile:
         reader = csv.reader(csvfile)
         header = next(reader) 
         for row in reader:
             if row[0].strip().lower() == topic.strip().lower():
-                return row[1:]
+                return row[1:] #return everything BESIDES the topic name 
     print(f"<p>Error: data for {topic} not in CSV</p>")
     return None
 
@@ -53,10 +53,12 @@ def quiz():
 
     response_data = []
     for i in range(len(answer_key)):
-        answer = form.getvalue("r" + str(i+1))
+        answer = form.getvalue("q" + str(i+1))
         response_data.append(answer)
 
     counter = sum(1 for i in range(len(answer_key)) if answer_key[i] == response_data[i])
+    
+    
     
     print(f"<h2>Quiz Language: {topic}</h2>")
     print(f"<p>You got {counter} out of {len(answer_key)} correct.</p>")
@@ -70,11 +72,11 @@ def quiz():
     plt.axis('equal') 
 
     
-    chart_path = "../images/quiz_result.png"
+    chart_path = "/home/students/odd/2027/awang70/public_html/feetcode/images/quiz_result.png"
     plt.savefig(chart_path)
     plt.close()
 
-    print('<img src="../images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
+    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
 
 
 
