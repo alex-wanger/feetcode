@@ -16,10 +16,10 @@
 
     <section id="aquiz">
       <h1>Java Quiz</h1>
-      <form action="../Python/quizstatistics.py" method="post" class="quiz-form">
-        
+      <form action="../Python/quiz.py" method="post" class="quiz-form">
         <div class="subsection">
           <p><strong>1. What does JVM stand for?</strong></p>
+          <input type="hidden" id="quizTopic" name="quizTopic" value="Java">
           <label><input type="radio" name="q1" value="A" required> Java Virtual Machine</label><br>
           <label><input type="radio" name="q1" value="B"> Java Visual Mode</label><br>
           <label><input type="radio" name="q1" value="C"> Joint Variable Map</label><br>

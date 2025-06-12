@@ -19,7 +19,7 @@ def addData(list1):
     with open(file_path, 'a', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
 
-        if len(list1) != 6:
+        if len(list1) != 8:
             print(f"Error, list length {len(list1)} is incorrect")
             return None
 
