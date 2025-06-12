@@ -314,3 +314,12 @@ th {
   text-align: center;
 }
 
+
+#aquiz{
+  flex-direction: column;
+}
+
+.quiz-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
