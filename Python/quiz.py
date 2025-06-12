@@ -33,7 +33,7 @@ def get_answer_key(topic):
     file_path = 'output.csv'
     with open(file_path, 'r', newline='') as csvfile:
         reader = csv.reader(csvfile)
-        header = next(reader)
+        header = next(reader) 
         for row in reader:
             if row[0].strip().lower() == topic.strip().lower():
                 return row[1:]
@@ -44,7 +44,7 @@ def quiz():
     form = cgi.FieldStorage()
     topic = form.getvalue("quizTopic")
     if not topic:
-        print(f"<p>Error: {topic}quizTopic not provided.</p>")
+        print(f"<p>Error: {topic} quizTopic not provided.</p>")
         return
 
     answer_key = get_answer_key(topic)
@@ -70,11 +70,11 @@ def quiz():
     plt.axis('equal') 
 
     
-    chart_path = "quiz_result.png"
+    chart_path = "/home/students/odd/2027/awang70/public_html/feetcode/images/quiz_result.png"
     plt.savefig(chart_path)
     plt.close()
 
-    print(f'<img src="quiz_result.png" alt="Quiz Result Chart" width="300"/>')
+    print('<img src="/~awang70/feetcode/images/quiz_result.png" alt="Quiz Result Chart" width="300"/>')
 
 
 
